@@ -1,0 +1,12 @@
+.container {
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 5%;
+}
+
+.start-row-flexbox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
