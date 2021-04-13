@@ -5,17 +5,17 @@ export const getCityPopulation = (city: string) => {
 
     const api: string = path + 'featureCode=PPLA&featureCode=PPLS&featureCode=PPLC&maxRows=1&name_equals=' + city;
 
-    fetch(api).then(
+    return fetch(api).then(
         (res) => res.json().then(
             (result) => {
                 if (result.totalResultsCount === 1)
                     return result.geonames[0].population;
-                else
-                    return null;
+                else 
+                    return 0;
             },
             (err) => {
                 console.error(err);
-                return null;
+                return 0;
             }
         )
     );
