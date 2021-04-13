@@ -6,8 +6,8 @@ export const StartView = () => {
     return (
         <div className="container">
             <div className="start-row-flexbox">
-                <RedirectButton text="SEARCH BY CITY" path="/searchbycity" />
-                <RedirectButton text="SEARCH BY COUNTRY" path="/searchbycountry" />
+                <RedirectButton text="SEARCH BY CITY" path="/search-city" />
+                <RedirectButton text="SEARCH BY COUNTRY" path="/search-country" />
             </div>
         </div>
     );
