@@ -10,10 +10,9 @@ export const App = () => {
 		<Router>
 			<h1 className="header">CityPop</h1>
 			<Switch>
-				<Route path="/" exact component={StartView}/>
-				<Route path="/search-country" exact component={SearchView}/>
-				<Route path="/search-city" exact component={SearchView}/>
-				<Route path="/result" exact component={ResultView}/>
+				<Route path="/" exact render={() => <StartView />} />
+				<Route path="/search" exact render={() => <SearchView />} />
+				<Route path="/result" exact render={() => <ResultView />} />
 			</Switch>
 		</Router>
 	);
