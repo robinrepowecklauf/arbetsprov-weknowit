@@ -1,8 +1,7 @@
-import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { SearchByCityView } from './views/SearchByCityView';
-import { SearchByCountryView } from './views/SearchByCountryView';
+import { SearchView } from './views/SearchView';
 import { StartView } from './views/StartView';
+import { ResultView } from './views/ResultView';
 
 import './css/app.css';
 
@@ -12,8 +11,8 @@ export const App = () => {
 			<h1 className="header">CityPop</h1>
 			<Switch>
 				<Route path="/" exact render={() => <StartView />} />
-				<Route path="/searchbycity" exact render={() => <SearchByCityView />} />
-				<Route path="/searchbycountry" exact render={() => <SearchByCountryView />} />
+				<Route path="/search" exact render={() => <SearchView />} />
+				<Route path="/result" exact render={() => <ResultView />} />
 			</Switch>
 		</Router>
 	);
