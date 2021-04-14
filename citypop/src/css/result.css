@@ -1,0 +1,39 @@
+.result-container {
+    margin: 0 auto;
+    width: 25%;
+    height: 30vh;
+    text-align: center;
+}
+
+.result-column-flexbox {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.result-column-flexbox p{
+    font-size: 28px;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.display-result {
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.display-result p{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.display-result h2{
+    font-size: 45px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.display-city-result {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
