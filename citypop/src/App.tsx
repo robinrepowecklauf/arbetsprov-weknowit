@@ -13,7 +13,8 @@ export const App = () => {
 				<Route path="/" exact component={StartView}/>
 				<Route path="/search-country" exact component={SearchView}/>
 				<Route path="/search-city" exact component={SearchView}/>
-				<Route path="/result" exact component={ResultView}/>
+				<Route path="/result-city" exact component={ResultView}/>
+				<Route path="/result-country" exact component={ResultView}/>
 			</Switch>
 		</Router>
 	);

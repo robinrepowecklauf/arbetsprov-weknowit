@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
-import { RedirectButton } from '../components/RedirectButton';
 import { BsSearch } from "react-icons/bs";
-
-import '../css/search-by.css'
 import { IconContext } from 'react-icons';
+
+import '../css/search.css'
 
 export const SearchView = () => {
     const [searchInput, setSearchInput] = useState("");
@@ -15,7 +14,6 @@ export const SearchView = () => {
         setSearchAfter(history.location.pathname.split('-')[1])
     }, [history]);
 
-
     const handleSearchInput = (event: any) => {
         setSearchInput(event.target.value);
     };
@@ -23,15 +21,10 @@ export const SearchView = () => {
     const handleSubmit = (event: any) => {
         event.preventDefault();
         history.push({
-            pathname: "/result",
+            pathname: "/result-" + searchAfter,
             state: searchInput
         });
     };
-    
-    /**
-     * TODO:
-     *  Lägg till funktionalitet för land
-     */
 
     return (
         <div className="search-container">
