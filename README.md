@@ -16,8 +16,7 @@ Vyer: `arbetsprov-weknowit/citypop/src/views/`
 1. Öppna terminalen och klona projektet, `git clone https://github.com/robinrepowecklauf/arbetsprov-weknowit.git`.
 2. Skriv `cd arbetsprov-weknowit/citypop` för att navigera dig in i `arbetsprov-weknowit/citypop`.
 3. Skriv `npm install` och vänta tills allt har laddats ner.
-4. Skriv `npm install react-router-dom` för att ladda ner ytterligare ett paket.
-5. Skriv `npm start` för att starta applikationen.
+4. Skriv `npm start` för att starta applikationen.
 
 ## Förbättringsmöjligheter
 Nedan förklaras förbättringsmöjligheter om tid fanns:
