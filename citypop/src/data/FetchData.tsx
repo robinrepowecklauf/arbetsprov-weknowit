@@ -1,9 +1,20 @@
 const username: string = 'username=weknowit&';
 const path: string = 'http://api.geonames.org/searchJSON?' + username;
 
+/**
+ * 
+ * @param num The number to format 
+ * @returns A formatted string divided into thousands and millions
+ */
 const formatNumber = (num: number) => {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
 }
+
+/**
+ * 
+ * @param city The city to find a populated in
+ * @returns The city's population
+ */
 
 export const getCityPopulation = (city: string) => {
 
@@ -12,34 +23,44 @@ export const getCityPopulation = (city: string) => {
     return fetch(api).then(
         (res) => res.json().then(
             (result) => {
-                console.log("result is: ", result);
-                console.log("City population ", result.geonames[0].population);
 
                 if (result.totalResultsCount === 1) {
                     let population = formatNumber(result.geonames[0].population);
                     return population;
                 }
                 else {
-                    return console.error("City not found");
+                    return "City does not exist";
                 }
             },
             (err) => {
-                return console.error(err);
+                return err;
             }
         )
     );
 }
 
+/**
+ * 
+ * @param country The country to find three most populated cities in  
+ * @returns Three most populated cities for a given country
+ */
+
 export const getMostPopulatedCities = async (country: string) => {
 
     return getCountryCode(country).then(
         async (res) => {
-            return getCities(res)
+            return getCities(res);
         }, (err) => {
-            return console.error(err)
+            return err;
         }
     )
 }
+
+/**
+ * 
+ * @param country The country to find its CountryCode
+ * @returns The CountryCode for a given country
+ */
 
 const getCountryCode = async (country: string) => {
 
@@ -51,14 +72,20 @@ const getCountryCode = async (country: string) => {
                 if (result.totalResultsCount > 0)
                     return result.geonames[0].countryCode;
                 else
-                    return console.error("Country not found");
+                    return "Country does not exist";
             },
             (err) => {
-                return console.error(err);
+                return err;
             }
         )
     );
 }
+
+/**
+ * 
+ * @param country CountryCode for a country
+ * @returns Three most populated cities for a country
+ */
 
 const getCities = async (country: string) => {
 
@@ -77,11 +104,11 @@ const getCities = async (country: string) => {
 
                     return cities;
                 } else {
-                    return console.error("Could not find country")
+                    return "Country does not exist";
                 }
             },
             (err) => {
-                return console.error(err);
+                return err;
             }
         )
     );
