@@ -3,7 +3,10 @@ Denna uppgift bygger på ett fiktivt scenario där We Know IT ska utveckla en we
 Detta gjordes med [React](https://reactjs.org/) tillsammans med [TypeScript](https://www.typescriptlang.org/).
 
 ## Struktur  
-TBA
+Komponenter: `arbetsprov-weknowit/citypop/src/components/`  
+Styling: `arbetsprov-weknowit/citypop/src/css/`  
+Fetch: `arbetsprov-weknowit/citypop/src/data/`  
+Vyer: `arbetsprov-weknowit/citypop/src/views/`
 
 ## Nödvändiga förutsättningar
 * [NodeJS](https://nodejs.org/en/)
@@ -15,3 +18,9 @@ TBA
 3. Skriv `npm install` och vänta tills allt har laddats ner.
 4. Skriv `npm install react-router-dom` för att ladda ner ytterligare ett paket.
 5. Skriv `npm start` för att starta applikationen.
+
+## Förbättringsmöjligheter
+Nedan förklaras förbättringsmöjligheter om tid fanns:
+* En design utöver given wireframe skulle kunna implementeras (osäker på om jag skulle göra det eller inte)
+* Laddningsanimationen när resultat hämtas skulle kunna sättas senare i kodblocket för att tydligt visa att den finns
+* Skapa en separat styling på felmeddelanden
