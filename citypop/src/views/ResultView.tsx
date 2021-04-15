@@ -21,7 +21,7 @@ export const ResultView = () => {
     }, [location]);
 
     useEffect(() => {
-        
+
         if (type === 'city')
             getCityPopulation(search).then(
                 (res) => {
@@ -45,25 +45,25 @@ export const ResultView = () => {
     return (
         <div className="result-container">
             {loading ?
-                <ClipLoader color={"#000000"} loading={loading} size={100}/>
-            :
-            <div className="result-column-flexbox">
-                <p>{search.toUpperCase()}</p>
-                <div className="display-result">
-                    {!Array.isArray(result) ?
-                        <div className="display-city-result">
-                            <p>POPULATION</p>
-                            <h2>{result}</h2>
-                        </div>
-                        :
-                        result.map((city: string, index: number) => {
-                            return (
-                                <RedirectButton key={index} text={city} path="/result-city" state={city} />
-                            );
-                        })
-                    }
+                <ClipLoader color={"#000000"} loading={loading} size={100} />
+                :
+                <div className="result-column-flexbox">
+                    <p>{search.toUpperCase()}</p>
+                    <div className="display-result">
+                        {!Array.isArray(result) ?
+                            <div className="display-city-result">
+                                <p>POPULATION</p>
+                                <h2>{result}</h2>
+                            </div>
+                            :
+                            result.map((city: string, index: number) => {
+                                return (
+                                    <RedirectButton key={index} text={city} path="/result-city" state={city} />
+                                );
+                            })
+                        }
+                    </div>
                 </div>
-            </div>
             }
         </div>
     );
